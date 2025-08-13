@@ -1,8 +1,8 @@
 from lib import DataReader
 from pyspark.sql.functions import *
 from pyspark.sql import *
-def filter_order_status(df,status):
-    return df.filter(col('order_status')==status)
+def filter_order_status(df,status1):
+    return df.filter(col('order_status')==status1)
 
 def order_status_sales(df,column):
     return df.groupBy(column).agg(sum('total_price').alias('total_sales'))
